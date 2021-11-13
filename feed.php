@@ -13,14 +13,14 @@ include("includes/includedFiles.php");
             <table>
                 <tr>
                     <td rowspan="2"><img src="assets/images/profile-pics/shawn.jpg" width="60" height="60"
-                            class="rounded"></td>
+                            class="rounded-circle"></td>
                     <td>
                         <p>Shawn Mendes</p>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>8 September pukul 09.00</p>
+                        <p style="color: #A9A9A9;">8 September pukul 09.00</p>
                     </td>
                 </tr>
             </table>
@@ -29,7 +29,7 @@ include("includes/includedFiles.php");
                 Suspendisse suscipit sed libero nec dignissim.</p>
             <img src="assets/images/carousel/4.jpg" width="500" height="300" class="img-fluid mx-auto d-block rounded">
         </div>
-        <div class="col">
+        <div class="col" style="margin-left: 10px;"> 
             <h5>Lagu Baru Rilis</h5>
         </div>
     </div>
@@ -40,14 +40,14 @@ include("includes/includedFiles.php");
             <table>
                 <tr>
                     <td rowspan="2"><img src="assets/images/profile-pics/taylor.jpg" width="60" height="60"
-                            class="img-fluid rounded"></td>
+                            class="img-fluid rounded-circle"></td>
                     <td>
                         <p>Taylor Swift</p>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>8 September pukul 09.00</p>
+                        <p style="color: #A9A9A9;">8 September pukul 09.00</p>
                     </td>
                 </tr>
             </table>
@@ -67,7 +67,7 @@ include("includes/includedFiles.php");
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col" style="margin-left: 10px;">
             <h5>Album Baru Rilis</h5>
         </div>
     </div>
@@ -77,7 +77,7 @@ include("includes/includedFiles.php");
             <table>
                 <tr>
                     <td rowspan="2"><img src="assets/images/profile-pics/adele.jpg" width="60" height="60"
-                            class="img-fluid rounded"></td>
+                            class="img-fluid rounded-circle"></td>
                     <td>
                         <p>Adele</p>
                     </td>
