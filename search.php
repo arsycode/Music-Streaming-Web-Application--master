@@ -8,40 +8,83 @@ else {
 	$term = "";
 }
 ?>
-<div>
-<div class="searchContainer d-flex justify-content-center mb-5 mt-5">
+<div class="container">
+	<div class="searchContainer d-flex justify-content-center mb-5 mt-5">
 
-	<input type="text" id="serchInput" class="searchInput" value="<?php echo $term; ?>" placeholder="Telusuri" onfocus="this.value = this.value">
+		<input type="text" id="serchInput" class="searchInput" value="<?php echo $term; ?>" placeholder="Telusuri"
+			onfocus="this.value = this.value">
 
-</div>
+	</div>
 
-<div class='row container-fluid' id="tes1">
-		<h3 class='col-6 fw-bold'>Riwayat Penelusuran</h3>
-		<h6 class='col-6 fw-bold text-end' style='color:#FF6F3D'>Hapus semua</h6></div>
-<script>
-$(".searchInput").focus();
+	<?php if($term == ""){?>
+	<div class='container-fluid'>
+		<div class='row' id="tes1">
+			<h3 class='col-6 fw-bold'>Riwayat Penelusuran</h3>
+			<h6 class='col-6 fw-bold text-end' style='color:#FF6F3D'>Hapus semua</h6>
+		</div>
 
-$(function() {
+		<div class="row">
+			<div class='mb-5 mt-3  d-inline-block history pt-3 text-center' style='width: 13rem;'>
+				<p>lorem</p>
+			</div>
+			<div class='mb-5 mt-3  d-inline-block history pt-3 text-center' style='width: 13rem;'>
+				<p>lorem</p>
+			</div>
+			<div class='mb-5 mt-3  d-inline-block history pt-3 text-center' style='width: 13rem;'>
+				<p>lorem</p>
+			</div>
+		</div>
 
-	$(".searchInput").keyup(function() {
-		clearTimeout(timer);
+		<h4 class='col-6 mb-4 fw-bold'>Genre top kamu</h4>
+		<div class="row">
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/pop.png");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/kpop.png");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/hiphop.png");'></div>
+		</div>
+		<div class="row mb-4">
+		<h4 class='col-6 fw-bold'>Jelajahi Semua</h4>
+		<h6 class='col-6 fw-bold text-end' style='color:#FF6F3D'>Lihat semua</h6>
+	</div>
+		<div class="row mb-2">
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/chill.jpg");'><h1 style="color: #6C5D48;" class="fs-1 container pt-5 position-absolute text-start fw-bold">Chill</h1></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/rebahan.jpg");'><h1 style="color: #fff;" class="container pt-5 position-absolute text-start fw-bold">Rebahan</h1></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/happy.jpg");'><h1 style="color: #fff;" class="container position-absolute bottom-0 text-center fw-bold">Happy</h1></div>
+		</div>
+		<div class="row mb-4">
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/akustik.jpg");'><h1 style="color: #fff;" class="container position-absolute bottom-0 text-center fw-bold">Akustik</h1></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/party.jpeg");'><h1 style="color: #fff;" class="container position-absolute bottom-0 text-center fw-bold">Party</h1></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/olahraga.webp");'><h1 style="color: #3B6A88;" class="container position-absolute top-50 start-0 fw-bold">Olahraga</h1></div>
+		</div>
+		<?php }?>
+		<script>
+			$(".searchInput").focus();
 
-		timer = setTimeout(function() {
-			var val = $(".searchInput").val();
-			openPage("search.php?term=" + val);}, 2000);
-			x.style.display = "none";
-	})
+			$(function () {
 
-})
+				$(".searchInput").keyup(function () {
+					clearTimeout(timer);
 
-</script>
+					timer = setTimeout(function () {
+						var val = $(".searchInput").val();
+						openPage("search.php?term=" + val);
+					}, 2000);
+				})
 
-<?php if($term == "")exit()?>
-<div class="tracklistContainer borderBottom">
-	<h2>SONGS</h2>
-	<ul class="tracklist">
-		
-		<?php
+			})
+		</script>
+
+		<?php if($term == "")exit()?>
+		<div class="tracklistContainer borderBottom">
+			<h2>SONGS</h2>
+			<ul class="tracklist">
+
+				<?php
 		$songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '$term%' LIMIT 10");
 
 		if(mysqli_num_rows($songsQuery) == 0) {
@@ -91,22 +134,21 @@ $(function() {
 
 		?>
 
-		<script>
-			
-			var tempSongIds = '<?php echo json_encode($songIdArray); ?>';		
-			tempPlaylist = JSON.parse(tempSongIds);
-			console.log(tempPlaylist);
-		</script>
+				<script>
+					var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
+					tempPlaylist = JSON.parse(tempSongIds);
+					console.log(tempPlaylist);
+				</script>
 
 
-	</ul>
-</div>
+			</ul>
+		</div>
 
-<div class="artistsContainer borderBottom">
-		
-	<h2>ARTISTS</h2>
+		<div class="artistsContainer borderBottom">
 
-	<?php
+			<h2>ARTISTS</h2>
+
+			<?php
 	$artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
 
 	if(mysqli_num_rows($artistsQuery) == 0) {
@@ -135,11 +177,11 @@ $(function() {
 	}
 	?>
 
-</div>
+		</div>
 
-<div class="gridViewContainer">
-	<h2>ALBUMS</h2>
-	<?php
+		<div class="gridViewContainer">
+			<h2>ALBUMS</h2>
+			<?php
 		$albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE title LIKE '$term%' LIMIT 10");
 
 
@@ -164,15 +206,57 @@ $(function() {
 		}
 	?>
 
-	
-
-</div>
 
 
+		</div>
 
-<nav class="optionsMenu">
-	<input type="hidden" class="songId">
-	<?php echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getUsername()); ?>
-</nav>
+		<div class='container-fluid'>
+		<div class='row' id="tes1">
+			<h3 class='col-6 fw-bold'>Riwayat Penelusuran</h3>
+			<h6 class='col-6 fw-bold text-end' style='color:#FF6F3D'>Hapus semua</h6>
+		</div>
 
-</div>
+		<div class="row">
+			<div class='mb-5 mt-3  d-inline-block history pt-3 text-center' style='width: 13rem;'>
+				<p>lorem</p>
+			</div>
+			<div class='mb-5 mt-3  d-inline-block history pt-3 text-center' style='width: 13rem;'>
+				<p>lorem</p>
+			</div>
+			<div class='mb-5 mt-3  d-inline-block history pt-3 text-center' style='width: 13rem;'>
+				<p>lorem</p>
+			</div>
+		</div>
+
+		<h4 class='col-6 mb-4 fw-bold'>Genre top kamu</h4>
+		<div class="row">
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/pop.png");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/kpop.png");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/hiphop.png");'></div>
+		</div>
+		<div class="row mb-4">
+	</div>
+		<div class="row mb-2">
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/chill.jpg");'><h3 class="position-absolute text-start">CHILL</h3></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/rebahan.jpg");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/happy.jpg");'></div>
+		</div>
+		<div class="row mb-4">
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/akustik.jpg");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/party.jpeg");'></div>
+		<div style='width: 1px;'></div>
+		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/olahraga.webp");'></div>
+		</div>
+
+
+		<nav class="optionsMenu">
+			<input type="hidden" class="songId">
+			<?php echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getUsername()); ?>
+		</nav>
+
+	</div>
