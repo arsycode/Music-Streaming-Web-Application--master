@@ -11,16 +11,16 @@
     <div class="justify-content-center " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a id="beranda" class="navStyle" onclick="setAktif('beranda')" href="browse.php">Beranda</a>
+          <a id="beranda" class="navStyle"  href="browse.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a id="eksplorasi" class="navStyle" onclick="setAktif('eksplorasi')" href="">Eksplorasi</a>
+          <a id="search " class="navStyle"  href="search.php">Eksplorasi</a>
         </li>
         <li class="nav-item">
-          <a id="feed" class="navStyle" onclick="setAktif('feed')" href="feed.php">Feed</a>
+          <a id="feed" class="navStyle"  href="feed.php">Feed</a>
         </li>
         <li class="nav-item">
-          <a id="playlistku" class="navStyle" onclick="setAktif('playlistku')" href="yourMusic.php">Playlistku</a>
+          <a id="yourMusic" class="navStyle"  href="yourMusic.php">Playlistku</a>
         </li>
       </ul>
     </div>
@@ -45,6 +45,7 @@
   {
       var element = document.getElementById('beranda');
       element.classList.add("active");
+      console.log(link);
   }
   if (link.indexOf('search') > -1)
   {

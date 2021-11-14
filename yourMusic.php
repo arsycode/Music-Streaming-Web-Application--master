@@ -2,18 +2,18 @@
 include("includes/includedFiles.php");
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top shadow p-3 mb-5">
+<nav class="navbar navbar-expand-lg navbar sticky-top">
   <div class="container-fluid">
     <div class="justify-content-center " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a id="beranda" class="navStyle" onclick="setAktif('playlist')" href="playlist.php">Playlist</a>
+          <a id="playlists" class="navStyle" style="color: #eb675e" href="yourMusic.php">Playlist</a>
         </li>
         <li class="nav-item">
-          <a id="eksplorasi" class="navStyle" onclick="setAktif('album')" href="">Album</a>
+          <a id="album" class="navStyle" href="album1.php">Album</a>
         </li>
         <li class="nav-item">
-          <a id="feed" class="navStyle" onclick="setAktif('artist')" href="feed.php">Artis</a>
+          <a id="artist" class="navStyle"href="artist1.php">Artis</a>
         </li>
       </ul>
     </div>
@@ -74,3 +74,26 @@ include("includes/includedFiles.php");
 	</div>
 
 </div>
+<script>
+  let link = window.location.href;
+  if (link.indexOf('playlists') > -1)
+  {
+      var element = document.getElementById('playlists');
+      element.classList.add("active");
+      console.log(link);
+  }
+  if (link.indexOf('album') > -1)
+  {
+      var element = document.getElementById('album');
+      element.classList.add("active");
+  }
+  if (link.indexOf('artist') > -1)
+  {
+      var element = document.getElementById('artist');
+      element.classList.add("active");
+  }
+  function setAktif(nav) {
+      var element = document.getElementById(nav);
+      element.classList.add("active");
+  }
+</script>

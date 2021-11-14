@@ -60,8 +60,9 @@ include("includes/includedFiles.php");
           }
         ?>
       </div>
+
       <div class='col-4'>
-        <h3 style="color:black" class="fw-bold">Musik Top</h3>
+        <h3 style="color:black" class="fw-bold">Lagu Baru</h3>
         <div class="row mt-3">
           <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle" width="100%"></div>
           <row class="col-8">
