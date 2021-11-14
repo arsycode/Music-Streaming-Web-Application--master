@@ -25,7 +25,8 @@ else {
 	<link rel="icon" href="../assets/images/icons/play.png" type="image/x-icon"/>
 	<link rel="shortcut icon" href="../assets/images/icons/play.png" type="image/x-icon"/>
 
-	<link rel="stylesheet" type="text/css" href="assets/css/style1.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style1.css?v=<?php echo time(); ?>">
+	<link type="text/css" rel="stylesheet" href="assets/css/style1.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="assets/js/script.js"></script>
@@ -35,7 +36,7 @@ else {
 
 	<div id="mainContainer">
 
-		<div id="topContainer">
+	
 
 			<?php include("includes/navBarContainer.php"); ?>
 

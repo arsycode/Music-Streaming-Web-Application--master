@@ -8,16 +8,17 @@ else {
 	$term = "";
 }
 ?>
+<div>
+<div class="searchContainer d-flex justify-content-center mb-5 mt-5">
 
-<div class="searchContainer">
-
-	<h4>Search for an artist, album or song</h4>
-	<input type="text" class="searchInput" value="<?php echo $term; ?>" placeholder="Start typing..." onfocus="this.value = this.value">
+	<input type="text" id="serchInput" class="searchInput" value="<?php echo $term; ?>" placeholder="Telusuri" onfocus="this.value = this.value">
 
 </div>
 
+<div class='row container-fluid' id="tes1">
+		<h3 class='col-6 fw-bold'>Riwayat Penelusuran</h3>
+		<h6 class='col-6 fw-bold text-end' style='color:#FF6F3D'>Hapus semua</h6></div>
 <script>
-
 $(".searchInput").focus();
 
 $(function() {
@@ -27,17 +28,15 @@ $(function() {
 
 		timer = setTimeout(function() {
 			var val = $(".searchInput").val();
-			openPage("search.php?term=" + val);
-		}, 2000);
-
+			openPage("search.php?term=" + val);}, 2000);
+			x.style.display = "none";
 	})
-
 
 })
 
 </script>
 
-<?php if($term == "") exit(); ?>
+<?php if($term == "")exit()?>
 <div class="tracklistContainer borderBottom">
 	<h2>SONGS</h2>
 	<ul class="tracklist">
@@ -61,26 +60,26 @@ $(function() {
 			$albumSong = new Song($con, $row['id']);
 			$albumArtist = $albumSong->getArtist();
 
-			echo "<li class='tracklistRow'>
-					<div class='trackCount'>
+			echo "<li class='tracklistRow row'>
+					<div class='trackCount col-1'>
 						<img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
 						<span class='trackNumber'>$i</span>
 					</div>
 
 
-					<div class='trackInfo'>
-						<span class='trackName'>" . $albumSong->getTitle() . "</span>
+					<div class='trackInfo col'>
+						<span class='trackName text-start'>" . $albumSong->getTitle() . "</span>
 						<span class='artistName'>" . $albumArtist->getName() . "</span>
 					</div>
 
-					<div class='trackOptions'>
+					<div class='trackOptions col'>
 
 						<input type='hidden' class='songId' value='". $albumSong->getId() . "'>
 
-						<img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
+						<img class='optionsButton' src='assets/images/icons/more-black.png' onclick='showOptionsMenu(this)'>
 					</div>
 
-					<div class='trackDuration'>
+					<div class='trackDuration col'>
 						<span class='duration'>" . $albumSong->getDuration() . "</span>
 					</div>
 
@@ -165,11 +164,15 @@ $(function() {
 		}
 	?>
 
-</div>
-
-<nav class="optionsMenu">
 	
 
+</div>
+
+
+
+<nav class="optionsMenu">
 	<input type="hidden" class="songId">
 	<?php echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getUsername()); ?>
 </nav>
+
+</div>

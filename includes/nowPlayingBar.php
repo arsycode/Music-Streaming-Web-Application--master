@@ -270,7 +270,7 @@ function pauseSong() {
 
 					<div class="progressBar">
 						<div class="progressBarBg">
-							<div class="progress"></div>
+							<div class="progress h-75"></div>
 						</div>
 					</div>
 
@@ -294,7 +294,7 @@ function pauseSong() {
 
 				<div class="progressBar">
 					<div class="progressBarBg">
-						<div class="progress"></div>
+						<div class="progress h-75"></div>
 					</div>
 				</div>
 

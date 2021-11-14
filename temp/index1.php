@@ -37,6 +37,7 @@ else{
 	$error="Page not found";
 }
 }
+}
 
 	?>
 
@@ -128,7 +129,7 @@ else{
 			 '.$error.'
 			</div>';
 			 
-}
+		 }
 	 
 	 ?></div>     
     </div>
