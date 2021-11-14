@@ -10,10 +10,10 @@ include("includes/includedFiles.php");
           <a id="playlists" class="navStyle" href="yourMusic.php">Playlist</a>
         </li>
         <li class="nav-item">
-          <a class="navStyle" href="album1.php">Album</a>
+          <a id="album" class="navStyle" href="album1.php">Album</a>
         </li>
         <li class="nav-item">
-          <a class="navStyle" style="color: #eb675e" href="artist1.php">Artis</a>
+          <a id="artist" class="navStyle" style="color: #eb675e" href="artist1.php">Artis</a>
         </li>
       </ul>
     </div>
@@ -21,7 +21,16 @@ include("includes/includedFiles.php");
     <div class="justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="navStyle" href="">Filter</a>
+          <a class="navStyle" href="">
+            <div class="row">
+              <div class="col ps-0 pe-1">
+                <p style="color: #eb675e">Filter</p>
+              </div>
+              <div class="col p-0 pt-1">
+                <img src="assets/images/icons/filter.png" width="15px">
+              </div>
+            </div>
+          </a>
         </li>
       </ul>
 
@@ -35,7 +44,7 @@ include("includes/includedFiles.php");
           while($row = mysqli_fetch_array($albumQuery)) {
 
           echo "<div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;' >
-            <img class='p-5 borderImg img-fluid' src='" . $row['artworkPath'] . "' alt='Card image cap' onclick='openPage(\"album.php?id=" . $row['id'] . "\")''>
+            <img class='p-5 borderImg rounded-circle img-fluid' src='" . $row['artworkPath'] . "' alt='Card image cap' onclick='openPage(\"album.php?id=" . $row['id'] . "\")''>
             <div class='card-body col'>
               <p class='card-text text-truncate fw-bold' style='color:black'>". $row['title'] ."</p>
               <p class='text-truncate' style='color:black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eum unde sequi. Nostrum commodi harum optio ex.</p>

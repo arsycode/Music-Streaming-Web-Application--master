@@ -2,7 +2,7 @@
 include("includes/includedFiles.php");
 ?>
 
-<nav class="navbar navbar-expand-lg navbar sticky-top">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <div class="justify-content-center " id="navbarNav">
       <ul class="navbar-nav">
@@ -13,7 +13,7 @@ include("includes/includedFiles.php");
           <a id="album" class="navStyle" href="album1.php">Album</a>
         </li>
         <li class="nav-item">
-          <a id="artist" class="navStyle"href="artist1.php">Artis</a>
+          <a id="artist" class="navStyle" href="artist1.php">Artis</a>
         </li>
       </ul>
     </div>
@@ -21,7 +21,16 @@ include("includes/includedFiles.php");
     <div class="justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="navStyle" href="register.php">Filter</a>
+          <a class="navStyle" href="">
+            <div class="row">
+              <div class="col ps-0 pe-1">
+                <p style="color: #eb675e">Filter</p>
+              </div>
+              <div class="col p-0 pt-1">
+                <img src="assets/images/icons/filter.png" width="15px">
+              </div>
+            </div>
+          </a>
         </li>
       </ul>
 
@@ -30,17 +39,18 @@ include("includes/includedFiles.php");
 </nav>
 
 <div class="playlistContainer">
-	
-	<div class="gridViewContainer">
-		
-		<h2>PLAYLISTS</h2>
 
-		<div class="buttonItems">
-			<button class="button green" onclick="createPlaylist()">NEW PLAYLIST</button>
-		</div>
+  <div class="gridViewContainer">
 
+  <div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;'>
+  <img class='p-5 borderImg img-fluid' src="assets/images/icons/plusplaylist.png" onclick="createPlaylist()">
+  <div class='card-body col'>
+    <p class='card-text text-truncate fw-bold' style='color:black'>Playlist Baru</p>
+    <br><br>
+  </div>
+</div>
 
-		<?php
+    <?php
 			$username = $userLoggedIn->getUsername();
 			$playlistQuery = mysqli_query($con, "SELECT * FROM playlists WHERE owner = '$username'");
 
@@ -65,35 +75,9 @@ include("includes/includedFiles.php");
 							"</div>
 
 						</div>";
-
-
-
 			}
 		?>
 
-	</div>
+  </div>
 
 </div>
-<script>
-  let link = window.location.href;
-  if (link.indexOf('playlists') > -1)
-  {
-      var element = document.getElementById('playlists');
-      element.classList.add("active");
-      console.log(link);
-  }
-  if (link.indexOf('album') > -1)
-  {
-      var element = document.getElementById('album');
-      element.classList.add("active");
-  }
-  if (link.indexOf('artist') > -1)
-  {
-      var element = document.getElementById('artist');
-      element.classList.add("active");
-  }
-  function setAktif(nav) {
-      var element = document.getElementById(nav);
-      element.classList.add("active");
-  }
-</script>
