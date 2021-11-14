@@ -1,75 +1,143 @@
 <?php 
 include("includes/includedFiles.php");
 ?>
-<html>
-<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-<script src="assets/js/bootstrap.min.js"></script>
+<html?>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <script src="assets/js/bootstrap.min.js"></script>
+  <div class="bgCarousel mb-5 mt-auto">
+    
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      </div>
 
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/images/carousel/1.png" class="d-block mx-auto" width="80%" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/carousel/2.png" class="d-block mx-auto" width="80%" alt="...">
+        </div>
+      </div>
 
-<div class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-      aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-      aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-      aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-      aria-label="Slide 4"></button>
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/images/carousel/1.jpg" class="d-block w-100" alt="...">
+
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-6">
+            <h3 style="color:black" class="fw-bold">Dari Playlist Kamu</h3>
+          </div>
+          <div class="col-3"></div>
+          <div class="col pt-1">
+            <h6 style="color:#FF6F3D" class="text-center">Lihat semua</h6>
+          </div>
+        </div>
+        <?php
+          $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 3");
+
+          while($row = mysqli_fetch_array($albumQuery)) {
+
+          echo "<div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;' >
+            <img class='p-5 borderImg img-fluid' src='" . $row['artworkPath'] . "' alt='Card image cap' onclick='openPage(\"album.php?id=" . $row['id'] . "\")''>
+            <div class='card-body col'>
+              <p class='card-text text-truncate fw-bold' style='color:black'>". $row['title'] ."</p>
+              <p class='text-truncate' style='color:black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eum unde sequi. Nostrum commodi harum optio ex.</p>
+            </div>
+          </div>";
+          }
+        ?>
+      </div>
+      <div class='col-4'>
+        <h3 style="color:black" class="fw-bold">Musik Top</h3>
+        <div class="row mt-3">
+          <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle" width="100%"></div>
+          <row class="col-8">
+            <h5 class='text-truncate text-start' style='color:black'>Lorem ipsum .</h5>
+            <h6 class='text-truncate' style='color:black'>Lorem ipsum .</h6>
+          </row>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="assets/images/carousel/2.jpg" class="d-block w-100" alt="...">
+
+    <div class="row mb-5">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-6">
+            <h3 class="fw-bold">Rekomendasi untukmu</h3>
+          </div>
+          <div class="col-3"></div>
+          <div class="col pt-1">
+            <h6 style="color:#FF6F3D" class="text-center">Lihat semua</h6>
+          </div>
+        </div>
+        <h6 style="color:black" class="fw-bold">Berdasarkan aktivitas terkini</h6>
+        <?php
+          $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 3");
+
+          while($row = mysqli_fetch_array($albumQuery)) {
+
+          echo "<div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;' >
+            <img class='p-5 borderImg img-fluid' src='" . $row['artworkPath'] . "' alt='Card image cap' onclick='openPage(\"album.php?id=" . $row['id'] . "\")''>
+            <div class='card-body col'>
+              <p class='card-text text-truncate fw-bold' style='color:black'>". $row['title'] ."</p>
+              <p class='text-truncate' style='color:black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eum unde sequi. Nostrum commodi harum optio ex.</p>
+            </div>
+          </div>";
+          }
+        ?>
+      </div>
+      <div class='col-4'>
+      <h3 style="color:black" class="fw-bold">Rekomendasi artis</h3>
+      <div class="row mt-3">
+          <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle" width="100%"></div>
+          <row class="col-8">
+            <h5 class='text-truncate text-start' style='color:black'>Lorem ipsum .</h5>
+          </row>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="assets/images/carousel/3.jpg" class="d-block w-100" alt="...">
+      </div>
+
+    <div class="row mb-5">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-6">
+            <h3 style="color:black" class="fw-bold">Trending</h3>
+          </div>
+          <div class="col-4"></div>
+          <div class="col pt-1">
+            <h6 style="color:#FF6F3D" class="text-start">Lihat semua</h6>
+          </div>
+        </div>
+        <?php
+          $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 3");
+
+          while($row = mysqli_fetch_array($albumQuery)) {
+
+          echo "<div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;' >
+            <img class='p-5 borderImg img-fluid' src='" . $row['artworkPath'] . "' alt='Card image cap' onclick='openPage(\"album.php?id=" . $row['id'] . "\")''>
+            <div class='card-body col'>
+              <p class='card-text text-truncate fw-bold' style='color:black'>". $row['title'] ."</p>
+              <p class='text-truncate' style='color:black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eum unde sequi. Nostrum commodi harum optio ex.</p>
+            </div>
+          </div>";
+          }
+        ?>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="assets/images/carousel/4.jpg" class="d-block w-100" alt="...">
-    </div>
+    <div class="container row mb-5"></div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
-<div class="playlistContainer">
-  <h2 style="color:black">Dari Playlist Kamu</h2>
-</div>
-<div class="gridViewContainer">
-
-  <?php
-		$albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
-
-		while($row = mysqli_fetch_array($albumQuery)) {
-			
-
-
-
-			echo "<div class='gridViewItem'>
-					<span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")''>
-						<img src='" . $row['artworkPath'] . "'>
-
-						<div class='gridViewInfo'>"
-							. $row['title'] .
-						"</div>
-					</span>
-
-				</div>";
-
-
-
-		}
-	?>
-
-</div>
-
-</html>
+  </html>
