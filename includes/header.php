@@ -36,8 +36,8 @@ else {
 
 	<div id="mainContainer">
 
+		
 
-	
 			<?php include("includes/navBarContainer.php"); ?>
 
 			<div id="mainViewContainer">

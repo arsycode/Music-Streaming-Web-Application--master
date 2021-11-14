@@ -11,16 +11,16 @@
     <div class="justify-content-center " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="navStyle" href="browse.php">Beranda</a>
+          <a id="beranda" class="navStyle"  href="browse.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="navStyle" href="search.php">Eksplorasi</a>
+          <a id="search " class="navStyle"  href="search.php">Eksplorasi</a>
         </li>
         <li class="nav-item">
-          <a class="navStyle" href="feed.php">Feed</a>
+          <a id="feed" class="navStyle"  href="feed.php">Feed</a>
         </li>
         <li class="nav-item">
-          <a class="navStyle" href="yourMusic.php">Playlistku</a>
+          <a id="yourMusic" class="navStyle"  href="yourMusic.php">Playlistku</a>
         </li>
       </ul>
     </div>
@@ -38,3 +38,32 @@
     </div>
   </div>
 </nav>
+
+<script>
+  let link = window.location.href;
+  if (link.indexOf('browse') > -1)
+  {
+      var element = document.getElementById('beranda');
+      element.classList.add("active");
+      console.log(link);
+  }
+  if (link.indexOf('search') > -1)
+  {
+      var element = document.getElementById('search');
+      element.classList.add("active");
+  }
+  if (link.indexOf('feed') > -1)
+  {
+      var element = document.getElementById('feed');
+      element.classList.add("active");
+  }
+  if (link.indexOf('yourMusic') > -1)
+  {
+      var element = document.getElementById('yourMusic');
+      element.classList.add("active");
+  }
+  function setAktif(nav) {
+      var element = document.getElementById(nav);
+      element.classList.add("active");
+  }
+</script>

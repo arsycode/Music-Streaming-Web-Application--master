@@ -237,20 +237,22 @@ else {
 		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/hiphop.png");'></div>
 		</div>
 		<div class="row mb-4">
+		<h4 class='col-6 fw-bold'>Jelajahi Semua</h4>
+		<h6 class='col-6 fw-bold text-end' style='color:#FF6F3D'>Lihat semua</h6>
 	</div>
 		<div class="row mb-2">
-		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/chill.jpg");'><h3 class="position-absolute text-start">CHILL</h3></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/chill.jpg");'><h1 style="color: #6C5D48;" class="fs-1 container pt-5 position-absolute text-start fw-bold">Chill</h1></div>
 		<div style='width: 1px;'></div>
-		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/rebahan.jpg");'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/rebahan.jpg");'><h1 style="color: #fff;" class="container pt-5 position-absolute text-start fw-bold">Rebahan</h1></div>
 		<div style='width: 1px;'></div>
-		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/happy.jpg");'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/happy.jpg");'><h1 style="color: #fff;" class="container position-absolute bottom-0 text-center fw-bold">Happy</h1></div>
 		</div>
 		<div class="row mb-4">
-		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/akustik.jpg");'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/akustik.jpg");'><h1 style="color: #fff;" class="container position-absolute bottom-0 text-center fw-bold">Akustik</h1></div>
 		<div style='width: 1px;'></div>
-		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/party.jpeg");'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/party.jpeg");'><h1 style="color: #fff;" class="container position-absolute bottom-0 text-center fw-bold">Party</h1></div>
 		<div style='width: 1px;'></div>
-		<div class='col mb-5 genreTop' style='height: 17rem; background-image: url("assets/images/artwork/olahraga.webp");'></div>
+		<div class='col mb-5 genreTop position-relative' style='height: 17rem; background-image: url("assets/images/artwork/olahraga.webp");'><h1 style="color: #3B6A88;" class="container position-absolute top-50 start-0 fw-bold">Olahraga</h1></div>
 		</div>
 
 

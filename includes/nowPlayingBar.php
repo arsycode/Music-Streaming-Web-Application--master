@@ -216,11 +216,11 @@ function pauseSong() {
 
 				<div class="trackInfo">
 
-					<span class="trackName">
+					<span class="trackName" style="color: #fff;">
 						<span role="link" tabindex="0"></span>
 					</span>
 
-					<span class="artistName">
+					<span class="artistName" style="color: #fff;">
 						<span role="link" tabindex="0"></span>
 					</span>
 

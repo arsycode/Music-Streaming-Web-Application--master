@@ -1,4 +1,4 @@
-<?php include("includes/includedFiles.php");
+ <?php include("includes/includedFiles.php");
 
 
 if(isset($_GET['id'])) {
@@ -40,26 +40,26 @@ $artist = $album->getArtist();
 			$albumSong = new Song($con, $songId);
 			$albumArtist = $albumSong->getArtist();
 
-			echo "<li class='tracklistRow'>
-					<div class='trackCount'>
+			echo "<li class='tracklistRow row'>
+					<div class='trackCount col-2'>
 						<img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
 						<span class='trackNumber'>$i</span>
 					</div>
 
 
-					<div class='trackInfo'>
+					<div class='trackInfo col text-left'>
 						<span class='trackName'>" . $albumSong->getTitle() . "</span>
 						<span class='artistName'>" . $albumArtist->getName() . "</span>
 					</div>
 
-					<div class='trackOptions'>
+					<div class='trackOptions col'>
 
 						<input type='hidden' class='songId' value='". $albumSong->getId() . "'>
 
 						<img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
 					</div>
 
-					<div class='trackDuration'>
+					<div class='trackDuration col'>
 						<span class='duration'>" . $albumSong->getDuration() . "</span>
 					</div>
 
