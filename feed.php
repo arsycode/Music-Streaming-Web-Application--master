@@ -6,9 +6,9 @@ include("includes/includedFiles.php");
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 <script src="assets/js/bootstrap.min.js"></script>
 
-<div class="container-fluid" style="">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-6 p-3 rounded-lg shadow-lg" style="height:500px; width:800px;">
+        <div class="col-6 p-3 rounded-lg shadow-lg" style="height:510px; width:800px;">
             <table>
                 <tr>
                     <td rowspan="2"><img src="assets/images/profile-pics/shawn.jpg" width="60" height="60"
@@ -26,7 +26,7 @@ include("includes/includedFiles.php");
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis dolor non justo convallis
                 vestibulum.
                 Suspendisse suscipit sed libero nec dignissim.</p>
-            <img src="assets/images/carousel/4.jpg" width="500" height="300" class="img-fluid mx-auto d-block rounded">
+            <img src="assets/images/carousel/4.jpg" width="600" height="400" class="img-fluid mx-auto d-block rounded">
         </div>
         <div class='col-4'>
             <h3 style="color:black" class="fw-bold">Lagu Baru Rilis</h3>
@@ -39,7 +39,6 @@ include("includes/includedFiles.php");
             </div>
         </div>
     </div>
-</div>
 
 <br><br>
 <div class="row">
@@ -77,17 +76,15 @@ include("includes/includedFiles.php");
         </div>
     </div>
     <div class='col-4'>
-            <h3 style="color:black" class="fw-bold">Album Baru Rilis</h3>
-            <div class="row mt-3">
-                <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle"
-                        width="100%"></div>
-                <row class="col-8">
-                    <h5 class='text-truncate text-start' style='color:black'>Lorem ipsum .</h5>
-                </row>
+        <h3 style="color:black" class="fw-bold">Album Baru Rilis</h3>
+        <div class="row mt-3">
+            <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle" width="100%">
             </div>
+            <row class="col-8">
+                <h5 class='text-truncate text-start' style='color:black'>Lorem ipsum .</h5>
+            </row>
         </div>
     </div>
-</div>
 </div>
 <br><br>
 <div class="row">
@@ -109,9 +106,11 @@ include("includes/includedFiles.php");
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis dolor non justo convallis
             vestibulum.
             Suspendisse suscipit sed libero nec dignissim.</p>
-        <div class="row">
-        <div class="col-auto"><img src="assets/images/feeds/adele1.jpg" width="300" height="300" class="rounded"></div>
-        <div class="col-auto"><img src="assets/images/feeds/adele2.jpg" width="300" height="300" class="rounded"></div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-auto"><img src="assets/images/feeds/adele1.jpg" width="300" height="300" class="rounded">
+            </div>
+            <div class="col-auto"><img src="assets/images/feeds/adele2.jpg" width="300" height="300" class="rounded">
+            </div>
         </div>
     </div>
 </div>
