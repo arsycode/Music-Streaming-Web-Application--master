@@ -14,7 +14,7 @@
           <a id="beranda" class="navStyle"  href="browse.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a id="search " class="navStyle"  href="search.php">Eksplorasi</a>
+          <a id="search" class="navStyle"  href="search.php">Eksplorasi</a>
         </li>
         <li class="nav-item">
           <a id="feed" class="navStyle"  href="feed.php">Feed</a>
