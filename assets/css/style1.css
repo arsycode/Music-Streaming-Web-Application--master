@@ -1,11 +1,12 @@
-html, body {
-	padding: 0;
-	margin: 0;
-	height: 100%;
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
 
 * {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
 }
 
@@ -17,7 +18,7 @@ body {
 
 
 #nowPlayingBarContainer {
-	width: 100%;
+    width: 100%;
     background-color: #282828;
     bottom: 0;
     position: fixed;
@@ -25,7 +26,7 @@ body {
 }
 
 #nowPlayingBar {
-	display: flex;
+    display: flex;
     height: 90px;
     padding: 16px;
     box-sizing: border-box;
@@ -33,17 +34,17 @@ body {
 
 #nowPlayingLeft,
 #nowPlayingRight {
-	width: 30%;
+    width: 30%;
     min-width: 180px;
 }
 
 #nowPlayingRight {
-	position: relative;
+    position: relative;
     margin-top: 16px;
 }
 
 #nowPlayingCenter {
-	width: 40%;
+    width: 40%;
     max-width: 700px;
     display: flex;
     flex-direction: column;
@@ -51,12 +52,12 @@ body {
 }
 
 #nowPlayingBar .content {
-	width: 100%;
-	height: 57px;
+    width: 100%;
+    height: 57px;
 }
 
 .playerControls .buttons {
-	margin: 0 auto;
+    margin: 0 auto;
     display: table;
 }
 
@@ -106,64 +107,64 @@ body {
 
 
 .controlButton {
-	background-color: transparent;
+    background-color: transparent;
     border: none;
     vertical-align: middle;
 }
 
 .controlButton img {
-	width: 20px;
+    width: 20px;
     height: 20px;
 }
 
 .controlButton.play img,
 .controlButton.pause img {
-	width: 32px;
-	height: 32px;
+    width: 32px;
+    height: 32px;
 }
 
 .controlButton:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .progressTime {
-	color: #a0a0a0;
+    color: #a0a0a0;
     font-size: 11px;
     min-width: 40px;
     text-align: center;
 }
 
 .playbackBar {
-	display: flex;
+    display: flex;
 }
 
 .progressBar {
-	width: 100%;
+    width: 100%;
     height: 12px;
     display: inline-flex;
     cursor: pointer;
 }
 
 .progressBarBg {
-	background-color: #404040;
+    background-color: #404040;
     height: 4px;
     width: 100%;
     border-radius: 2px;
 }
 
 .progress {
-	background-color: #a0a0a0;
+    background-color: #a0a0a0;
     height: 4px;
     width: 0;
     border-radius: 2px;
 }
 
 .playbackBar .progressBar {
-	margin-top: 3px;
+    margin-top: 3px;
 }
 
 #nowPlayingLeft .albumArtwork {
-	height: 100%;
+    height: 100%;
     max-width: 57px;
     margin-right: 15px;
     float: left;
@@ -171,36 +172,36 @@ body {
 }
 
 #nowPlayingLeft .trackInfo {
-	display: table;
+    display: table;
 }
 
 #nowPlayingLeft .trackInfo .trackName {
-	margin: 6px 0;
+    margin: 6px 0;
     display: inline-block;
     width: 100%;
 }
 
 #nowPlayingLeft .trackInfo .artistName span {
-	font-size: 12px;
+    font-size: 12px;
 }
 
 .volumeBar {
-	width: 180px;
+    width: 180px;
     position: absolute;
     right: 0;
 }
 
 .volumeBar .progressBar {
-	width: 125px;
+    width: 125px;
 }
 
 #topContainer {
-	min-height: 100%;
-	width: 100%;
+    min-height: 100%;
+    width: 100%;
 }
 
 #navBarContainer {
-	background-color: #000;
+    background-color: #000;
     width: 220px;
     height: 100vh;
     position: fixed;
@@ -411,7 +412,8 @@ body {
 }
 
 .button.green {
-    background-color: #2ebd59; /*spotify green*/
+    background-color: #2ebd59;
+    /*spotify green*/
     border-color: #2ebd59;
 }
 
@@ -435,7 +437,7 @@ body {
     font-weight: 200;
     font-size: 24px;
     letter-spacing: 2px;
-    border-radius: 30px;;
+    border-radius: 30px;
     border-width: 3px;
     border-color: #FF6F3D;
 }
@@ -448,25 +450,30 @@ body {
     background-image: url('../images/icons/search2.png');
     background-repeat: no-repeat;
     background-size: 3%;
-    background-position: calc(10% - 70px) center;
+    background-position: calc(10% - 60px) center;
 }
 
-.searchInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.searchInput::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #FF6F3D;
-    opacity: 1; /* Firefox */
-  }
-  
-  .searchInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #FF6F3D;
-  }
-  
-  .searchInput::-ms-input-placeholder { /* Microsoft Edge */
-    color: #FF6F3D;
-  }
+    opacity: 1;
+    /* Firefox */
+}
 
-  .history {
+.searchInput:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #FF6F3D;
+}
+
+.searchInput::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #FF6F3D;
+}
+
+.history {
     background-color: #E5E5E5;
-    border-radius: 30px;;
+    border-radius: 30px;
+    ;
     margin-right: 2%;
 }
 
@@ -510,7 +517,7 @@ input:focus {
     position: fixed;
     background-color: #282828;
     width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 3px;
     z-index: 1000;
     display: none;
@@ -535,7 +542,7 @@ input:focus {
 
 .optionsMenu select {
     border: none;
-/*    text-indent: 12px;*/
+    /*    text-indent: 12px;*/
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -556,9 +563,10 @@ input:focus {
 .userDetails .container input[type="text"],
 .userDetails .container input[type="password"],
 .userDetails .container button {
-    display:block;
+    display: block;
     margin: 16px auto;
 }
+
 .userDetails .container input[type="text"],
 .userDetails .container input[type="password"] {
     height: 50px;
@@ -597,10 +605,28 @@ input:focus {
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-  }
+}
 
-  .genreTop{
+.genreTop {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px;
-  }
+    height: 17rem;
+}
+
+@media (max-width: 990px) {
+    .genreTop { 
+        border-radius: 10px;
+        height: 9rem;
+    }
+
+    .searchInput {
+        background-position: calc(10% - 30px) center;
+    }
+}
+@media (min-width: 990px) and (max-width: 1200px) {
+    .genreTop { 
+        border-radius: 10px;
+        height: 12rem;
+    }
+}
