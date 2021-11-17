@@ -42,13 +42,13 @@ include("includes/includedFiles.php");
 
   <div class="gridViewContainer">
 
-  <div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;'>
-  <img class='p-5 borderImg img-fluid' src="assets/images/icons/plusplaylist.png" onclick="createPlaylist()">
-  <div class='card-body col'>
-    <p class='card-text text-truncate fw-bold' style='color:black'>Playlist Baru</p>
-    <br><br>
-  </div>
-</div>
+    <div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;'>
+      <img class='p-5 borderImg img-fluid' src="assets/images/icons/plusplaylist.png" onclick="createPlaylist()">
+      <div class='card-body col'>
+        <p class='card-text text-truncate fw-bold' style='color:black'>Playlist Baru</p>
+        <br><br>
+      </div>
+    </div>
 
     <?php
 			$username = $userLoggedIn->getUsername();
@@ -65,15 +65,18 @@ include("includes/includedFiles.php");
 				echo "<div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"playlist.php?id=" . $playlist->getId() ."\")'>
 						
 
-						<div class='playlistImage'>
+        <div class='shadow mb-5 mt-5 bg-body gridViewItem d-inline-block borderS p-2' style='width: 15rem;'>
 
-							<img src='assets/images/icons/playlist.png'/>
+							<img class='p-5 borderImg img-fluid' src='assets/images/icons/playlist.png'/>
 
-						</div>
-						<div class='gridViewInfo'>"
+						
+            <div class='card-body col'>
+						<p class='card-text text-truncate fw-bold'>"
 								. $playlist->getName() .
-							"</div>
-
+							"</p>
+              <br></br>
+            </div>
+            </div>
 						</div>";
 			}
 		?>

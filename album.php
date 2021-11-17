@@ -42,7 +42,7 @@ $artist = $album->getArtist();
 
 			echo "<li class='tracklistRow row'>
 					<div class='trackCount col-2'>
-						<img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
+						<img class='play' src='assets/images/icons/playbutton.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
 						<span class='trackNumber'>$i</span>
 					</div>
 
@@ -56,7 +56,7 @@ $artist = $album->getArtist();
 
 						<input type='hidden' class='songId' value='". $albumSong->getId() . "'>
 
-						<img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
+						<img class='optionsButton' src='assets/images/icons/more-black.png' onclick='showOptionsMenu(this)'>
 					</div>
 
 					<div class='trackDuration col'>

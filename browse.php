@@ -88,19 +88,19 @@ include("includes/includedFiles.php");
       </div>
     </div>
 
-    <div class="row mb-5">
-      <div class="col-8">
-        <div class="row">
-          <div class="col-6">
-            <h3 class="fw-bold">Rekomendasi untukmu</h3>
-          </div>
-          <div class="col-3"></div>
-          <div class="col pt-1">
-            <h6 style="color:#FF6F3D" class="text-center">Lihat semua</h6>
-          </div>
-        </div>
-        <h6 style="color:black" class="fw-bold">Berdasarkan aktivitas terkini</h6>
-        <?php
+        <div class="row mb-5">
+          <div class="col-8">
+            <div class="row">
+              <div class="col-6">
+                <h3 class="fw-bold">Rekomendasi untukmu</h3>
+              </div>
+              <div class="col-3"></div>
+              <div class="col pt-1">
+                <h6 style="color:#FF6F3D" class="text-center">Lihat semua</h6>
+              </div>
+            </div>
+            <h6 style="color:black" class="fw-bold">Berdasarkan aktivitas terkini</h6>
+            <?php
           $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 3");
 
           while($row = mysqli_fetch_array($albumQuery)) {
@@ -114,31 +114,31 @@ include("includes/includedFiles.php");
           </div>";
           }
         ?>
-      </div>
-      <div class='col-4'>
-        <h3 style="color:black" class="fw-bold">Rekomendasi artis</h3>
-        <div class="row mt-3">
-          <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle" width="100%">
           </div>
-          <row class="col-8">
-            <h5 class='text-truncate text-start' style='color:black'>Lorem ipsum .</h5>
-          </row>
+          <div class='col-4'>
+            <h3 style="color:black" class="fw-bold">Rekomendasi artis</h3>
+            <div class="row mt-3">
+              <div class="col-2 text-center"><img src="assets/images/icons/playbutton.png" class="circle" width="100%">
+              </div>
+              <row class="col-8">
+                <h5 class='text-truncate text-start' style='color:black'>Lorem ipsum .</h5>
+              </row>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="row mb-5">
-      <div class="col-8">
-        <div class="row">
-          <div class="col-6">
-            <h3 style="color:black" class="fw-bold">Trending</h3>
-          </div>
-          <div class="col-4"></div>
-          <div class="col pt-1">
-            <h6 style="color:#FF6F3D" class="text-start">Lihat semua</h6>
-          </div>
-        </div>
-        <?php
+        <div class="row mb-5">
+          <div class="col-8">
+            <div class="row">
+              <div class="col-6">
+                <h3 style="color:black" class="fw-bold">Trending</h3>
+              </div>
+              <div class="col-4"></div>
+              <div class="col pt-1">
+                <h6 style="color:#FF6F3D" class="text-start">Lihat semua</h6>
+              </div>
+            </div>
+            <?php
           $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 3");
 
           while($row = mysqli_fetch_array($albumQuery)) {
@@ -152,9 +152,9 @@ include("includes/includedFiles.php");
           </div>";
           }
         ?>
+          </div>
+        </div>
+        <div class="container row mb-5"></div>
       </div>
-    </div>
-    <div class="container row mb-5"></div>
-  </div>
 
-  </html>
+      </html>
